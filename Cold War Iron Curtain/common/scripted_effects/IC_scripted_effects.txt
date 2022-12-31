@@ -5054,16 +5054,40 @@ ic_pulse = {
 		}
 	}
 	if = {
-		limit = {
+		limit = { #Fixed.
 			original_tag = PRC
-			NOT = { has_country_flag = prc_leader_change_1960 }
+			NOT = { has_country_flag = prc_leader_change_1973 }
 			date > 1970.1.1
-			date < 1970.1.1
+			date < 1976.1.1
 		}
-		set_country_flag = prc_leader_change_1960
+		set_country_flag = prc_leader_change_1973
 		set_country_leader_portrait = {
 			ideology = maoism
 			portrait = GFX_Mao_1973
+		}
+	}
+	if = { #Le Duan takes over.
+		limit = {
+			original_tag = VIN
+			date > 1960.9.1
+			date < 1986.1.1
+		}
+		create_country_leader = {
+			name = "Le Duan"
+			picture = "Le_Duan.dds"
+			ideology = marxism_leninism
+		}
+	}
+	if = { #Ho Chi Minh no longer leads the Viet Cong, Huu Tho takes over.
+		limit = {
+			original_tag = NLF
+			date > 1958.1.1
+			date < 1976.1.1
+		}
+		create_country_leader = {
+		    name = "Nguyen Huu Tho"
+			picture = "Nguyen_Huu_Tho.dds"
+			ideology = marxism_leninism
 		}
 	}
 	if = {
